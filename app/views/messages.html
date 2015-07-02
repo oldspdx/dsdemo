@@ -1,9 +1,66 @@
-<!DOCTYPE html>
+<div data-role="view" data-title="Messages" data-reload="true" data-layout="back-layout" data-reload="true" data-transition="fade">
+	
+	<div style="padding:10px;background-color:#DFDFDF">
+		<span style="font-size:.8em;padding-left:15px;"><i>7/2/2015 10:30 AM</i></span>
+		<h5>
+		You have NEW Contacts
+		</h5>
+		<div id="grid" style="padding:10px;"></div>
+	</div>
+		<div style="padding:10px;background-color:#CECECE">
+			<span style="font-size:.8em;padding-left:15px;"><i>7/1/2015 4:20 PM</i></i>span>
+		<h5>
+		NEW inventory added 7/1/2015
+		</h5>
+		<div id="grid" style="padding:10px;"></div>
+	</div>
+	<script>
+		$(document).ready(function () {
+			$("#grid").kendoGrid({
+				columns: [{
+						field: "FirstName",
+						title: "First Name"
+            			},
+					{
+						field: "LastName",
+						title: "Last Name"
+            			},
+					{
+						field: "email",
+						title: "Email"
+						},
+					{
+						field: "phone",
+						title: "phone"
+            			}
+				],
+				dataSource: {
+					data: [{
+							FirstName: "Joe",
+							LastName: "Smith",
+							email: "test@test.com",
+							phone: "(503) 555-1212"
 
-<html>
-    <head>
-        <title></title>
-    </head>
-    <body>
-    </body>
-</html>
+                },
+						{
+							FirstName: "Jane",
+							LastName: "Smith",
+							email: "test@test.com",
+							phone: "(503) 555-1212"
+                },
+						{
+							FirstName: "Del",
+							LastName: "Olds",
+							email: "del@oldspdx.com",
+							phone: "(503) 260-1744-1212"
+                }
+				]
+				},
+				sortable: {
+					mode: "single",
+					allowUnsort: false
+				}
+			});
+		});
+	</script>
+</div>
